@@ -74,7 +74,7 @@ export const mockProjects = (title: string, description: string, tags: string, l
             "timestamp":"765817712002"
             }`
 
-        if (title!="" && description !="" && tags !="" && link!=""){
+        if (title!=="" && description !=="" && tags !=="" && link!==""){
 
             resolve(JSON.parse(base_projects+`,
                     {

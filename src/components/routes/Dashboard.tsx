@@ -33,8 +33,8 @@ const Dashboard = () => {
         const projects: Project[] = await mockProjects(
           localStorage.getItem('title') || "",
           localStorage.getItem('description') || "",
-          localStorage.getItem('') || "",
-          localStorage.getItem('title') || ""
+          localStorage.getItem('tags') || "",
+          localStorage.getItem('link') || ""
         );
         const aboutme: AboutMe = await mockAboutme();
         setResponse({ aboutme, projects });
