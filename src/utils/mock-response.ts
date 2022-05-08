@@ -45,7 +45,7 @@ export const mockAboutme = () => new Promise<AboutMe>(function (resolve, rejecte
 export const mockProjects = (title: string, description: string, tags: string, link: string) => new Promise<Project[]>(function (resolve, rejected) {
     setTimeout(() => {
 
-        const base_projects= `[
+        let base_projects= localStorage.getItem('stored_projects') || `[
             {
             "id":"12349as8df90",
             "title":"Feature-Selection-Algorithms",
@@ -72,25 +72,29 @@ export const mockProjects = (title: string, description: string, tags: string, l
             "link":"https://styled-components.com/docs",
             "tag":"python, SageMath",
             "timestamp":"765817712002"
-            }`
+            }]`
 
         if (title!=="" && description !=="" && tags !=="" && link!==""){
-
-            resolve(JSON.parse(base_projects+`,
-                    {
-                    "id":"12s349as8df90",
-                    "title":"${title}",
-                    "description":"${description}",
-                    "version":"17.0.1",
-                    "link":"${link}",
-                    "tag":"${tags}",
-                    "timestamp":"765817712000"
-                    }
-                ]`
-            )); 
+            
+            base_projects=base_projects.replace("]", "");
+            console.log(base_projects);
+            let new_projects=base_projects+`,
+                {
+                "id":"12s349as8df90",
+                "title":"${title}",
+                "description":"${description}",
+                "version":"17.0.1",
+                "link":"${link}",
+                "tag":"${tags}",
+                "timestamp":"765817712000"
+                }
+            ]`;
+            localStorage.setItem("stored_projects",new_projects)
+            console.log(new_projects);
+            resolve(JSON.parse(new_projects)); 
         } else{
-            resolve(JSON.parse(base_projects+`
-                ]`
+            resolve(JSON.parse(
+                base_projects
             )); 
 
         }

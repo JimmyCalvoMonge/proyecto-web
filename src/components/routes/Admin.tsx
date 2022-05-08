@@ -33,7 +33,6 @@ const Admin = () => {
 
     try {
       addNotification(t("loader.text"));
-      // TODO: agregar lógica para añadir el nuevo proyecto a la lista de proyectos.
       await save_new_project();
       history.replace(from);
     } catch (e) {
@@ -79,11 +78,14 @@ const Admin = () => {
   function save_new_project(){
     // Por el momento estoy guardando los nuevos datos en localStorage
     //No es eficiente, pero luego podremos ver las opciones de Backend para guardar los nuevos proyectos
-    // de una mejor manera.
+    // de una mejor manera. // Puede ser con un useContext también, pero como Admin y Dashboard no son parent-child
+    // se me hizo un poco más complicado.
+
     localStorage.setItem('title',title);
     localStorage.setItem('description',description);
     localStorage.setItem('tags',tags);
     localStorage.setItem('link',link);
+    
   }
 
   return (
