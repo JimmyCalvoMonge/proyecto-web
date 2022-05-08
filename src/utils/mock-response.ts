@@ -44,46 +44,57 @@ export const mockAboutme = () => new Promise<AboutMe>(function (resolve, rejecte
 
 export const mockProjects = (title: string, description: string, tags: string, link: string) => new Promise<Project[]>(function (resolve, rejected) {
     setTimeout(() => {
-        resolve(JSON.parse(
-            `[
-                {
-                "id":"12349as8df90",
-                "title":"Feature-Selection-Algorithms",
-                "description":"Un pequeño proyecto de investigación sobre algunos algoritmos de rankeo de variables, como Relief, Mutual Information y Distance Discriminants.",
-                "version":"17.0.1",
-                "link":"https://github.com/JimmyCalvoMonge/Feature-Selection-Algorithms",
-                "tag":"Python, Jupyter Notebook",
-                "timestamp":"765817712000"
-                },
-                {
-                "id":"789asdfas89",
-                "title":"Fractals",
-                "description":"Clases en node para graficar curvas fractales, como la función de Cantor, o el copo de nieve de Koch.",
-                "version":"4.0.3",
-                "link":"https://github.com/JimmyCalvoMonge/Fractals",
-                "tag":"Javascript, p5.js",
-                "timestamp":"765817712001"
-                },
-                {
-                "id":"56765asdfasdf8",
-                "title":"Group Theory in Python",
-                "description":"Algunas funciones para un curso elemental de álgebra abstracta, factorización de polinomios en varias variables con python.",
-                "version":"5.2.1",
-                "link":"https://styled-components.com/docs",
-                "tag":"python, SageMath",
-                "timestamp":"765817712002"
-                },
-                {
-                "id":"12s349as8df90",
-                "title":"${title}",
-                "description":"${description}",
-                "version":"17.0.1",
-                "link":"${link}",
-                "tag":"${tags}",
-                "timestamp":"765817712000"
-                }
-            ]`
-        ));
+
+        const base_projects= `[
+            {
+            "id":"12349as8df90",
+            "title":"Feature-Selection-Algorithms",
+            "description":"Un pequeño proyecto de investigación sobre algunos algoritmos de rankeo de variables, como Relief, Mutual Information y Distance Discriminants.",
+            "version":"17.0.1",
+            "link":"https://github.com/JimmyCalvoMonge/Feature-Selection-Algorithms",
+            "tag":"Python, Jupyter Notebook",
+            "timestamp":"765817712000"
+            },
+            {
+            "id":"789asdfas89",
+            "title":"Fractals",
+            "description":"Clases en node para graficar curvas fractales, como la función de Cantor, o el copo de nieve de Koch.",
+            "version":"4.0.3",
+            "link":"https://github.com/JimmyCalvoMonge/Fractals",
+            "tag":"Javascript, p5.js",
+            "timestamp":"765817712001"
+            },
+            {
+            "id":"56765asdfasdf8",
+            "title":"Group Theory in Python",
+            "description":"Algunas funciones para un curso elemental de álgebra abstracta, factorización de polinomios en varias variables con python.",
+            "version":"5.2.1",
+            "link":"https://styled-components.com/docs",
+            "tag":"python, SageMath",
+            "timestamp":"765817712002"
+            }`
+
+        if (title!="" && description !="" && tags !="" && link!=""){
+
+            resolve(JSON.parse(base_projects+`,
+                    {
+                    "id":"12s349as8df90",
+                    "title":"${title}",
+                    "description":"${description}",
+                    "version":"17.0.1",
+                    "link":"${link}",
+                    "tag":"${tags}",
+                    "timestamp":"765817712000"
+                    }
+                ]`
+            )); 
+        } else{
+            resolve(JSON.parse(base_projects+`
+                ]`
+            )); 
+
+        }
+        
     }, 500);
 
 });
