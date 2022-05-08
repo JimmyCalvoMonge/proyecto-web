@@ -1,6 +1,7 @@
 import { AboutMe } from "../model/aboutme";
 import { Project } from "../model/project";
 
+// Cambiamos el login de prueba
 export const mockLogin = (userName: string, password: string) => new Promise<TokenResponse>(function (resolve, rejected) {
     setTimeout(() => {
         // CAMBIAMOS EL USERNAME Y PASSWORD POR DEFECTO PARA EL LOGIN //
