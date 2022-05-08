@@ -2,6 +2,7 @@ export const themes = {
   light: {
     text1: "black",
     text2: "rgba(0,0,0,0.7)",
+    linktext : "#A87EEC",
     primary: `#7838e0`,
     secondary: "#87FDDE",
     backgroundColor: `#f2f6ff`,
@@ -34,7 +35,8 @@ export const themes = {
   },
   dark: {
     text1: "white",
-    text2: "rgba(255,255,255,0.7)",
+    text2: "#3E769A",
+    linktext : "#8F869E",
     primary: `#401587`,
     secondary: "#2EAE7B",
     backgroundColor: `#2B2830`,

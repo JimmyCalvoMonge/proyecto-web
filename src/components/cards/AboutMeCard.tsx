@@ -22,17 +22,20 @@ const AboutMeCard = (props: AboutMeCardProps) => {
           <AboutMeCardRow
             title={t("aboutMeCard.name")}
             value={props.aboutMe.name}
+            link={false}
           />
           {props.aboutMe.birthday && (
             <AboutMeCardRow
               title={t("aboutMeCard.birthdate")}
               value={props.aboutMe.birthday}
+              link={false}
             />
           )}
           {props.aboutMe.nationality && (
             <AboutMeCardRow
               title={t("aboutMeCard.nationality")}
               value={props.aboutMe.nationality}
+              link={false}
             />
           )}
         </InfoSection>
@@ -42,12 +45,14 @@ const AboutMeCard = (props: AboutMeCardProps) => {
             <AboutMeCardRow
               title={t("aboutMeCard.occupation")}
               value={props.aboutMe.job}
+              link={false}
             />
           )}
           {props.aboutMe.github && (
             <AboutMeCardRow
               title={t("aboutMeCard.github")}
               value={props.aboutMe.github}
+              link={true}
             />
           )}
         </InfoSection>
@@ -102,9 +107,9 @@ const Wrapper = styled.div`
 `;
 
 const ImageWrapper = styled.img`
-  width: 100%;
+  width: 75%;
   max-height: 400px;
-  object-fit: cover;
+  margin-left:-25%;
   border-radius: 12px;
 
   @media (max-width: 1024px) {

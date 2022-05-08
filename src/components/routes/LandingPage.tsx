@@ -82,6 +82,7 @@ const LottieWrapper = styled.div`
   height: 600px;
   margin: 0px auto;
   outline: none;
+  margin-top:-5%;
 
   @media (max-width: 750px) {
     width: 400px;

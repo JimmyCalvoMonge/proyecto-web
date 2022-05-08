@@ -25,7 +25,17 @@ const Dashboard = () => {
     async function retrieveInfo() {
       try {
         startSearch(t("loader.text"));
-        const projects: Project[] = await mockProjects();
+        
+        // Por el momento estoy guardando los nuevos datos en localStorage
+        //No es eficiente, pero luego podremos ver las opciones de Backend para guardar los nuevos proyectos
+        // de una mejor manera.
+
+        const projects: Project[] = await mockProjects(
+          localStorage.getItem('title') || "",
+          localStorage.getItem('description') || "",
+          localStorage.getItem('') || "",
+          localStorage.getItem('title') || ""
+        );
         const aboutme: AboutMe = await mockAboutme();
         setResponse({ aboutme, projects });
       } catch {
@@ -50,8 +60,8 @@ const Dashboard = () => {
   }, [setResponse, t, addNotification, removeLastNotification]);
 
   return (
-    <Wrapper>
-      <ContentWrapper>
+        <Wrapper>
+        <ContentWrapper>
         {response && (
           <ResponseWrapper>
             <AboutMeWrapper>
@@ -67,7 +77,7 @@ const Dashboard = () => {
 
         {error && <ErrorMsg>{t("dashboard.error")}</ErrorMsg>}
       </ContentWrapper>
-    </Wrapper>
+        </Wrapper>
   );
 };
 

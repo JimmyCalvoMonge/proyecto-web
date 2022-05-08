@@ -1,13 +1,13 @@
 {
     "meta": {
-        "title": "Portfolio",
+        "title": "Administra tu Portafolio",
         "description": "Personal Portfolio Webpage"
     },
     "app": {
-        "title": "Bienvenid@s a mi Web Portfolio"
+        "title": "Hola! Da un vistazo a mi portafolio:"
     },
     "landing": {
-        "title": "Bienvenido a mi Portfolio"
+        "title": "Hola! Da un vistazo a mi portafolio:"
     },
     "loader" : {
         "text": "cargando..."

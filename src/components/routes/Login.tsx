@@ -72,7 +72,7 @@ const Login = () => {
           { errorMsg && <ErrorDescription>{errorMsg}</ErrorDescription>}
           <LoginForm name="email" type="email" placeholder={t("login.email_placeholder")} value={username} onChange={onChangeUsername}/>
           <LoginForm name="password" type="password" placeholder={t("login.password_placeholder")} value={password} onChange={onChangePassword}/>
-          <ButtonForm type="submit" value={t("login.button_login") != null ? t("login.button_login") as string : "Log In"}  />
+          <ButtonForm type="submit" value={t("login.button_login") != null ? t("login.button_login") as string : "Log In" }  />
         </LoginPannel>
       </ContentWrapper>
     </Wrapper>
